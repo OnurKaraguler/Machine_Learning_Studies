@@ -1,6 +1,6 @@
 ## Titanic - Machine Learning from Disaster
 
-The purpose of the study is to build a predictive model that answers the question: “what sorts of people were more likely to survive?” using passenger data (ie name, age, gender, socio-economic class, etc).
+This data set contains details of a bank's customers and the target variable is a binary variable reflecting the fact whether the customer left the bank (closed his account) or he continues to be a customer.
 
 The study consists of:<br>
   (1) Importing packages<br>
@@ -8,7 +8,7 @@ The study consists of:<br>
   <ul>
       <li>created dataframes by reading cvs files with Pandas</li>
       <li>checked whether the dependent variable is balanced or imbalanced.</li>
-      <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/127742868-d63b26e4-8af7-4929-9e36-f36559ab3549.png">
+          <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/128782908-8fff5875-1094-4754-9e9d-65d7ad01dbd8.png">
       <li>checked for missing values</li>
   </ul>
   
@@ -19,9 +19,11 @@ The study consists of:<br>
               <li>Visualizations</li>
                   <ul>
                     <li>stacked_bar_chart: plot a stacked bar chart to show how a feature is categorized using the independent feature</li>
-                    <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/127743327-a5b9656e-bed2-477f-b48a-16069a10d907.png">
+                    <img height="100"  alt="image" src="https://user-images.githubusercontent.com/58983814/128782985-610590b2-ede2-403a-b4b7-d479aa5c2e85.png">
+                    <li>histogram: plot a histogram to show how a continuous variable is distributed</li>
+                    <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/128783759-2abbf071-3539-43e0-ae61-028c6279f60d.png">
                     <li>box_plot: plot a boxplot to show how the values in the dataset are spread out</li>
-                    <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/127743417-dc07ef52-4904-45b0-b3ad-32fea92ce181.png">
+                    <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/128783086-d21c7b97-6bc1-474f-964f-631d7634da57.png">
                   </ul>
             </ul>
             <ul>
@@ -44,12 +46,6 @@ The study consists of:<br>
                     <li>transform(scale) the mean of a feature to be 0 and the standard deviation to be 1</li>
                   </ul>
             </ul>
-            <ul>
-              <li>Missing value imputation  </li>
-                  <ul>
-                    <li>imputing_missing_values: replace missing values in data with substitute values</li>
-                  </ul>
-            </ul>
         <li>[3.2 Analyze each feature](#32)</li>
               <ul>
                 <li>Each feature examined in depth using related visualization functions</li>
@@ -66,10 +62,7 @@ The study consists of:<br>
                 <li>best features selected with Univariate feature selection (GenericUnivariateSelect and SelectKBest) based on univariate statistical tests (ANOVA F-value and Mutual Information)</li>
               </ul>
           <li>[3.4 Correlation of the features](#34)</li>
-              <ul>
-                <li>plot the correlation of the features where the correlation with the dependent feature is greater than 0.2</li>
-                <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/127752709-ba5d253b-6af5-4164-ae80-d247493e473a.png">
-              </ul>
+                <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/128784061-72c06d3e-5be4-4198-bb5d-bed45bdbf003.png">
       </ul>
   (4) Algorithms and Results<br>
       <ul>
@@ -80,23 +73,25 @@ The study consists of:<br>
         <li>[4.2 Model selection - final](#42)</li>
               <ul>
               <li>best model selected according to the accuracy</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127752871-38a8f69a-373a-4006-8b99-049e0cd0da47.png">
+                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784221-c630938f-88ca-44e6-87bc-8010fdc35780.png">
             </ul>
         <li>[4.3 Evalueation of the selected model](#43)</li>
               <ul>
               <li>finally, feature selection has been done again with SequentialFeatureSelector. SequentialFeatureSelector chooses the best features based on the cross-validation score of an estimator (the selected best model) to form a feature subset.</li>
               <li>computed and visually represented confusion matrix to evaluate the accuracy of a classification</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753429-098f69c9-7dbe-4335-94c9-522088f17d0e.png">
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753440-a7d5005f-d416-46fb-ba4a-9c6ed0b01259.png">
-              <li>computed Receiver operating characteristic (ROC) and area under the curve (AUC) to illustrate the performance of the binary classification</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753725-e8291c1b-f365-4a0e-94f4-d385e722cf47.png">
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753732-4e1a6531-941a-4a97-9536-b898df613489.png">
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753745-dd3597f0-2365-4fd0-aa49-8d5b318dd549.png">
+                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784310-bc1b9c2b-193c-4fba-a964-e003fc788034.png"> <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784353-6363a0a7-e10a-4377-84d0-330583598de9.png">
+              <li>Graphs for threshold determination</li>
+                    <ul>
+                      <li>ROC & AUC</li>
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784667-92dff9e5-6c95-4f41-85d5-2b3915705b07.png">
+                      <li>TPR & TNR - Threshold </li>
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784718-67f6b8bf-528b-4bb6-a6ea-1e8eda5d75d2.png">
+                      <li>Precision(PPV) & NPV - Recall</li>
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784768-90a6435f-2c17-48d4-90d3-0b17584a8fdc.png">
+                      <li>Accuracy - Threshold</li>
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784791-a5c5e95b-b822-42fd-a086-35323e6fd992.png">
+                    </ul>
+                <li>final Confusion Matrix with the new Threshold</li>
+                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784853-9f97bfea-2e34-4cb5-881b-3169aa100019.png"> <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784885-a2181a44-f7e2-464b-bab2-2dfff832b527.png">
             </ul>
       </ul>
-  (5) Submission<br>
-      <ul>
-        <li>[5.1 Results on the Kaggle website](#51)</li>
-              <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753765-de7d0ee9-8a94-479c-8d67-556523b0adbb.png">
-      </ul>
-
