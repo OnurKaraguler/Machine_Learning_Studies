@@ -80,23 +80,31 @@ The study consists of:<br>
         <li>[4.2 Model selection - final](#42)</li>
               <ul>
               <li>best model selected according to the accuracy</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127752871-38a8f69a-373a-4006-8b99-049e0cd0da47.png">
+                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128779894-627ea6e5-c8b4-4000-8748-e5bb31aa0edf.png">
             </ul>
         <li>[4.3 Evalueation of the selected model](#43)</li>
               <ul>
               <li>finally, feature selection has been done again with SequentialFeatureSelector. SequentialFeatureSelector chooses the best features based on the cross-validation score of an estimator (the selected best model) to form a feature subset.</li>
               <li>computed and visually represented confusion matrix to evaluate the accuracy of a classification</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753429-098f69c9-7dbe-4335-94c9-522088f17d0e.png">
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753440-a7d5005f-d416-46fb-ba4a-9c6ed0b01259.png">
-              <li>computed Receiver operating characteristic (ROC) and area under the curve (AUC) to illustrate the performance of the binary classification</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753725-e8291c1b-f365-4a0e-94f4-d385e722cf47.png">
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753732-4e1a6531-941a-4a97-9536-b898df613489.png">
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753745-dd3597f0-2365-4fd0-aa49-8d5b318dd549.png">
+                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128780166-4e265e4d-9e06-42b7-906d-de27d080136d.png"> <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128780232-e38aa92e-7fec-4062-90da-c4d4b95d70fa.png">
+              <li>Graphs for threshold determination</li>
+                    <ul>
+                      <li>ROC & AUC</li>
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128780798-20e6e6d4-13c8-4255-af1e-5a9e36e9210c.png">
+                      <li>TPR & TNR - Threshold </li>
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128780875-188cf512-aa49-4fde-81b0-bba2be5aec4f.png">
+                      <li>Precision(PPV) & NPV - Recall</li>
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128780964-7d8a095a-cdfb-4927-81d7-dfc9034693b2.png">
+                      <li>Accuracy - Threshold</li>
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128781082-f2fc47ee-aa96-41c0-93f2-14fbb4f1bf7f.png">
+                    </ul>
+                <li>final Confusion Matrix with the new Threshold</li>
+                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128781233-3c009afb-3c51-4341-b7dd-258a4b6f621e.png"> <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128781270-d81ed766-61b3-4120-bc2a-3762eb0f08ec.png">
             </ul>
       </ul>
   (5) Submission<br>
       <ul>
         <li>[5.1 Results on the Kaggle website](#51)</li>
-              <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753765-de7d0ee9-8a94-479c-8d67-556523b0adbb.png">
+              <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/127753765-de7d0ee9-8a94-479c-8d67-556523b0adbb.png"> <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128781345-7c6aa925-e377-4bd6-8911-d31b4437edc7.png">
       </ul>
 
