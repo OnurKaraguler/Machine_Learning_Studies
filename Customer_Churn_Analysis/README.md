@@ -3,8 +3,8 @@
 This data set contains details of a bank's customers and the target variable is a binary variable reflecting the fact whether the customer left the bank (closed his account) or he continues to be a customer.
 
 The study consists of:<br>
-  (1) Importing packages<br>
-  (2) Read CSV train/test files<br>
+  (1) Importing Libraries<br>
+  (2) Loading the data<br>
   <ul>
       <li>created dataframes by reading cvs files with Pandas</li>
       <li>checked whether the dependent variable is balanced or imbalanced.</li>
@@ -52,7 +52,7 @@ The study consists of:<br>
                 <li>Encoded</li>
                 <li>Dropped outliers and standardised</li>
               </ul>
-        <li>[3.3 Feature selection](#33)</li>
+        <li>[3.3 Feature engineering](#33)</li>
             <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/127749043-f5b849f7-1f48-4f5b-bfff-300f6a21aa62.png">
               <ul>
                 <li>removed the features that they have at least 99% same value</li>
@@ -64,9 +64,9 @@ The study consists of:<br>
           <li>[3.4 Correlation of the features](#34)</li>
                 <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/128784061-72c06d3e-5be4-4198-bb5d-bed45bdbf003.png">
       </ul>
-  (4) Algorithms and Results<br>
+  (4) Machine Learning Algorithms and Results<br>
       <ul>
-        <li>[4.1 Running machine learning models](#41)</li>
+        <li>[4.1 Building ML models ](#41)</li>
             <ul>
               <li>Logistic, Random Forest, Naive Bayes, Support Vector Classification, k-Nearest Neighbours, Stochastic Gradient Descent, Gradient Boosting Trees, xgboost -> XGBClassifier</li>
             </ul>
