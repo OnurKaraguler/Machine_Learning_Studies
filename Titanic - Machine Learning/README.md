@@ -3,8 +3,8 @@
 The purpose of the study is to build a predictive model that answers the question: “what sorts of people were more likely to survive?” using passenger data (ie name, age, gender, socio-economic class, etc).
 
 The study consists of:<br>
-  (1) Importing packages<br>
-  (2) Read CSV train/test files<br>
+  (1) Importing Libraries<br>
+  (2) Loading the data<br>
   <ul>
       <li>created dataframes by reading cvs files with Pandas</li>
       <li>checked whether the dependent variable is balanced or imbalanced.</li>
@@ -56,7 +56,7 @@ The study consists of:<br>
                 <li>Encoded</li>
                 <li>Dropped outliers and standardised</li>
               </ul>
-        <li>[3.3 Feature selection](#33)</li>
+        <li>[3.3 Feature Engineering](#33)</li>
             <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/127749043-f5b849f7-1f48-4f5b-bfff-300f6a21aa62.png">
               <ul>
                 <li>removed the features that they have at least 99% same value</li>
@@ -71,9 +71,9 @@ The study consists of:<br>
                 <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/127752709-ba5d253b-6af5-4164-ae80-d247493e473a.png">
               </ul>
       </ul>
-  (4) Algorithms and Results<br>
+  (4) Machine Learning Algorithms and Results<br>
       <ul>
-        <li>[4.1 Running machine learning models](#41)</li>
+        <li>[4.1 Building ML models](#41)</li>
             <ul>
               <li>Logistic, Random Forest, Naive Bayes, Support Vector Classification, k-Nearest Neighbours, Stochastic Gradient Descent, Gradient Boosting Trees, xgboost -> XGBClassifier</li>
             </ul>
@@ -84,7 +84,7 @@ The study consists of:<br>
             </ul>
         <li>[4.3 Evalueation of the selected model](#43)</li>
               <ul>
-              <li>finally, feature selection has been done again with SequentialFeatureSelector. SequentialFeatureSelector chooses the best features based on the cross-validation score of an estimator (the selected best model) to form a feature subset.</li>
+              <li>finally, feature engineering has been done again with SequentialFeatureSelector. SequentialFeatureSelector chooses the best features based on the cross-validation score of an estimator (the selected best model) to form a feature subset.</li>
               <li>computed and visually represented confusion matrix to evaluate the accuracy of a classification</li>
                 <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128780166-4e265e4d-9e06-42b7-906d-de27d080136d.png"> <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128780232-e38aa92e-7fec-4062-90da-c4d4b95d70fa.png">
               <li>Graphs for threshold determination</li>
