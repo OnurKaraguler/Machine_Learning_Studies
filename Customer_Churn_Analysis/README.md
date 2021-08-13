@@ -66,32 +66,38 @@ The study consists of:<br>
       </ul>
   (4) Machine Learning Algorithms and Results<br>
       <ul>
-        <li>[4.1 Building ML models ](#41)</li>
+        <li>[4.1 Overcoming Class Imbalance using SMOTE](#41)</li>
+            <ul>
+              <li>It is an imbalanced data where the target variable, churn has 79.7% customers not churning and 20.3% customers who have churned</li>
+              <li>SMOTE: Synthetic Minority Oversampling Technique will be used for creating synthesized data</li>
+              <li>A comparative analysis will be done on the dataset using RandomForestClassifier</li>
+              <li>The accuracy metric will be ignored to evaluate the performance of the classifier on this imbalanced dataset</li>
+              <li>Precision, recall, F1-score metrics will be taken into account</li>
+            </ul>
+          <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425118-9c6366be-999a-4eac-b14a-d5cb865b5124.png">
+        <li>[4.2 Building ML models ](#41)</li>
             <ul>
               <li>Logistic, Random Forest, Naive Bayes, Support Vector Classification, k-Nearest Neighbours, Stochastic Gradient Descent, Gradient Boosting Trees, xgboost -> XGBClassifier</li>
             </ul>
-        <li>[4.2 Model selection - final](#42)</li>
+        <li>[4.3 Model selection - final](#42)</li>
               <ul>
               <li>best model selected according to the accuracy</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784221-c630938f-88ca-44e6-87bc-8010fdc35780.png">
+                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425219-99bfe891-5871-4b97-8ac5-4b5da86f764e.png">
             </ul>
-        <li>[4.3 Evalueation of the selected model](#43)</li>
+        <li>[4.4 Evalueation of the selected model](#43)</li>
               <ul>
-              <li>finally, feature selection has been done again with SequentialFeatureSelector. SequentialFeatureSelector chooses the best features based on the cross-validation score of an estimator (the selected best model) to form a feature subset.</li>
               <li>computed and visually represented confusion matrix to evaluate the accuracy of a classification</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784310-bc1b9c2b-193c-4fba-a964-e003fc788034.png"> <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784353-6363a0a7-e10a-4377-84d0-330583598de9.png">
+                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425271-bdfd6fd2-21fb-4e0d-b0f0-bbafc9647342.png"> <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425292-0561162f-1597-4a40-9730-027b61bb91cf.png">
               <li>Graphs for threshold determination</li>
                     <ul>
                       <li>ROC & AUC</li>
-                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784667-92dff9e5-6c95-4f41-85d5-2b3915705b07.png">
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425350-862d8257-d051-4dc3-a38c-3b58baed7f29.png">
                       <li>TPR & TNR - Threshold </li>
-                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784718-67f6b8bf-528b-4bb6-a6ea-1e8eda5d75d2.png">
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425381-4171b3df-9ab3-4c9f-a361-6f7091b37cba.png">
                       <li>Precision(PPV) & NPV - Recall</li>
-                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784768-90a6435f-2c17-48d4-90d3-0b17584a8fdc.png">
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425404-94b473d6-7ea6-4c87-9578-ae2bd23c1697.png">
                       <li>Accuracy - Threshold</li>
-                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784791-a5c5e95b-b822-42fd-a086-35323e6fd992.png">
+                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425420-7ac745f6-3877-4b65-93e1-b06ad78ffe05.png">
                     </ul>
-                <li>final Confusion Matrix with the new Threshold</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784853-9f97bfea-2e34-4cb5-881b-3169aa100019.png"> <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/128784885-a2181a44-f7e2-464b-bab2-2dfff832b527.png">
             </ul>
       </ul>
