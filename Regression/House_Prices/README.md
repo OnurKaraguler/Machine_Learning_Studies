@@ -1,33 +1,65 @@
-## Developer Salary Prediction using Machine Learning
+## House Prices - Advanced Regression Techniques
 
-The purpose of the study is to predict of annual salaries ($) of professional software developers who know Python. Data from the Developer Survey conducted by Stack Overflow in 2020 and attended by 65,000 people were used in this analysis. 
+Ask a home buyer to describe their dream house, and they probably won't begin with the height of the basement ceiling or the proximity to an east-west railroad. But this playground competition's dataset proves that much more influences price negotiations than the number of bedrooms or a white-picket fence.
 
-https://insights.stackoverflow.com/survey/2020#overview
+With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges you to predict the final price of each home.
 
-<img width="257" alt="image" src="https://user-images.githubusercontent.com/58983814/124835864-ab753c00-df8a-11eb-8b58-93df8ddaaad8.png">
+Goal: It is your job to predict the sales price for each house. For each Id in the test set, you must predict the value of the SalePrice variable.
+
+Metric: Submissions are evaluated on Root-Mean-Squared-Error (RMSE) between the logarithm of the predicted value and the logarithm of the observed sales price. (Taking logs means that errors in predicting expensive houses and cheap houses will affect the result equally.)
+
+https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
+
 
 The study consists of two parts:<br>
-  (1) Creating data frames from the  survey data and sending them to the sql server using Pandas library (please see **df_to_sql.ipynb**)<br>
-  (2) Extracting data from the created sql tables and creating a dataframe using Pandas, cleaning the data (Data preprocessing) and regression analysis (please see **salary_prediction.ipynb**)<br>
+  (1) Sending the survey dataframe to the sql server using Pandas library (please see **df_to_sql.ipynb**)<br>
+  (2) Extracting data from the created sql tables and creating a dataframe using Pandas, cleaning the data (Data preprocessing) and regression analysis (please see **House_Prices.ipynb**)<br>
 
-<ul>
-<li>Bar, histogram and scatter plots have been created with Matplotlib for data visualization. Missing values in the dataframe have been plotted using the heatmap created with Seaborn.</li>
+<a href='#1.0'>Functions to be used</a><br>
+<blockquote>
+    <a>Pandas</a><br>
+    <a>Visualization</a><br>
+    <a>Encoding</a><br>
+    <a>Scaler (Standard, MinMax)</a><br>
+</blockquote>
 
-<img height="150" src="https://user-images.githubusercontent.com/58983814/124914364-ef068f00-dff8-11eb-93ae-ba4215809170.png"> <img height="150" src="https://user-images.githubusercontent.com/58983814/124914521-1e1d0080-dff9-11eb-830f-00ad982f5a3e.png"> <img height="150" src="https://user-images.githubusercontent.com/58983814/124914615-3ab93880-dff9-11eb-903f-d5840c5cd0cd.png"> <img height="150" src="https://user-images.githubusercontent.com/58983814/124914732-5e7c7e80-dff9-11eb-8ca1-44ae68bef5e6.png">
+<a href='#2.0'>Import Libraries</a><br>
+<a href='#3.0'>Connect to the mysql database</a><br>
+<blockquote>
+    <a>Establish a connection to SQL Database</a><br>
+</blockquote>
 
-<li>Missing values in the 'YearsCodePro' and 'ConvertedComp' columns have been predicted using Random Forest Classifier.</li>
-<li>Features that are highly correlated to each other have been removed from the dataframe to simplify the model and increase efficiency.</li>
-<li>Outliers have been dropped using boxplot created with Matplotlib.</li>
-<img height="75" src="https://user-images.githubusercontent.com/58983814/124918209-7229e400-dffd-11eb-9fce-6cd013c11cec.png">
-<li>Linear Regression, PolynomialFeatures, Decision Tree, Ridge, Lasso and GradientBoostingRegressor machine learning algorithms have been applied and compared with R2 (coefficient of determination) and RMSW (Root Mean Square Error) metrics. Based on the results of the metrics, GradientBoostingRegressor has been chosen.</li>
-<li>Some data causing unsuitable residuals have been removed from the dataframe. Thus, the Accuracy (R2) of the regression model has been improved from 63% to 83%.</li>
-</ul>
+<a href='#4.0'>Load Data</a><br>
+<blockquote>
+    <a>Query the database table into a dataframe</a><br>
+</blockquote>
 
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) **RESULT:** When the information below is given, annual salary of a professional software developer can be predicted with 83% probability.
-<ul>
-<li><strong>YearsCodePro</strong> -> NOT including education, how many years have you coded professionally (as a part of your work)?</li>
-<li><strong>Country</strong> -> Where do you live?</li>
-<li><strong>OpSys</strong> -> What is the primary operating system in which you work?</li>
-<li><strong>OrgSize</strong> -> Approximately how many people are employed by the company or organization you currently work for?</li>
-</ul>
+<a href='#5.0'>Exploratory Data Analysis (EDA)</a><br>
+<blockquote>
+    <a href='#5.1'>Split dataframe with/without missing values</a><br>
+    <a href='#5.2'>Preprocessing for the dataframe without missing values</a><br>
+    <a href='#5.3'>Preprocessing for the dataframe with missing values</a><br>
+    <a href='#5.4'>Save the preprocessed dataframe and load it again</a><br>
+</blockquote>
 
+<a href='#6.0'>Machine Learning Algorithms and Results</a><br>
+<blockquote>
+    <a href='#6.1'>Feature engineering</a><br>
+    <a href='#6.2'>Correlation of the features</a><br>
+    <a href='#6.3'>Save the dataframe with selected features and load it again</a><br>
+    <a href='#6.4'>Split Dataframe</a><br>
+    <a href='#6.5'>Building ML models</a><br>
+    <blockquote>
+        <a>Linear Regression </a><br>
+        <a>Decision Tree Regressor</a><br>
+        <a>Ridge, Lasso</a><br>
+        <a>Gradient Boosting Regressor</a><br>
+        <a>Model_Selection - Final</a><br>
+    </blockquote>
+    <a href='#6.6'>Accuracy improvement of the selected model</a><br>
+</blockquote>
+
+<a href='#7.0'>Submission</a><br>
+<blockquote>
+    <a>Results on the Kaggle website</a><br>
+</blockquote>
