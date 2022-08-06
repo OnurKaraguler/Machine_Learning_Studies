@@ -1,103 +1,55 @@
-## Customer Churn Analysis
+## AI4I 2020 Predictive Maintenance Dataset Data Set
 
-This data set contains details of a bank's customers and the target variable is a binary variable reflecting the fact whether the customer left the bank (closed his account) or he continues to be a customer.
+Since real predictive maintenance datasets are generally difficult to obtain and in particular difficult to publish, we present and provide a synthetic dataset that reflects real predictive maintenance encountered in industry to the best of our knowledge.
 
-The study consists of:<br>
-  (1) Importing Libraries<br>
-  (2) Loading the data<br>
-  <ul>
-      <li>created dataframes by reading cvs files with Pandas</li>
-      <li>checked whether the dependent variable is balanced or imbalanced.</li>
-          <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/128782908-8fff5875-1094-4754-9e9d-65d7ad01dbd8.png">
-      <li>checked for missing values</li>
-  </ul>
-  
-  (3) Data Preprocessing<br>
-      <ul>
-        <li>[3.1 Functions to be used](#31)</li>
-            <ul>
-              <li>Visualizations</li>
-                  <ul>
-                    <li>stacked_bar_chart: plot a stacked bar chart to show how a feature is categorized using the independent feature</li>
-                    <img height="100"  alt="image" src="https://user-images.githubusercontent.com/58983814/128782985-610590b2-ede2-403a-b4b7-d479aa5c2e85.png">
-                    <li>histogram: plot a histogram to show how a continuous variable is distributed</li>
-                    <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/128783759-2abbf071-3539-43e0-ae61-028c6279f60d.png">
-                    <li>box_plot: plot a boxplot to show how the values in the dataset are spread out</li>
-                    <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/128783086-d21c7b97-6bc1-474f-964f-631d7634da57.png">
-                  </ul>
-            </ul>
-            <ul>
-              <li>Encoding </li>
-              <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/127749099-7ab7e089-9504-45f9-b4dd-33f9a9103834.png">
-                  <ul>
-                    <li>ohe_to_df: One Hot Encoding-find the unique values per feature and transform the data to a binary one-hot encoding</li>
-                    <li>encode_categorical_column: Convert each value in a categorical column to a number from 0 to the number of items-1 by encoding</li>
-                  </ul>
-            </ul>
-            <ul>
-              <li>KBinsDiscretizer </li>
-                  <ul>
-                    <li>is used to convert a continuous data into categorical data</li>
-                  </ul>
-            </ul>
-            <ul>
-              <li>Standardization (StandardScaler)  </li>
-                  <ul>
-                    <li>transform(scale) the mean of a feature to be 0 and the standard deviation to be 1</li>
-                  </ul>
-            </ul>
-        <li>[3.2 Analyze each feature](#32)</li>
-              <ul>
-                <li>Each feature examined in depth using related visualization functions</li>
-                <li>Encoded</li>
-                <li>Dropped outliers and standardised</li>
-              </ul>
-        <li>[3.3 Feature engineering](#33)</li>
-            <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/127749043-f5b849f7-1f48-4f5b-bfff-300f6a21aa62.png">
-              <ul>
-                <li>removed the features that they have at least 99% same value</li>
-                <li>removed duplicate features </li>
-                <li>dropped highly correlated features using Pearson Correlation</li>
-                <li>first feature elimination done with SelectFromModel according to their importance assigned by logistic regression</li>
-                <li>best features selected with Univariate feature selection (GenericUnivariateSelect and SelectKBest) based on univariate statistical tests (ANOVA F-value and Mutual Information)</li>
-              </ul>
-          <li>[3.4 Correlation of the features](#34)</li>
-                <img height="100" alt="image" src="https://user-images.githubusercontent.com/58983814/128784061-72c06d3e-5be4-4198-bb5d-bed45bdbf003.png">
-      </ul>
-  (4) Machine Learning Algorithms and Results<br>
-      <ul>
-        <li>[4.1 Overcoming Class Imbalance using SMOTE](#41)</li>
-            <ul>
-              <li>It is an imbalanced data where the target variable, churn has 79.7% customers not churning and 20.3% customers who have churned</li>
-              <li>SMOTE: Synthetic Minority Oversampling Technique will be used for creating synthesized data</li>
-              <li>A comparative analysis will be done on the dataset using RandomForestClassifier</li>
-              <li>The accuracy metric will be ignored to evaluate the performance of the classifier on this imbalanced dataset</li>
-              <li>Precision, recall, F1-score metrics will be taken into account</li>
-            </ul>
-          <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425118-9c6366be-999a-4eac-b14a-d5cb865b5124.png">
-        <li>[4.2 Building ML models ](#41)</li>
-            <ul>
-              <li>Logistic, Random Forest, Naive Bayes, Support Vector Classification, k-Nearest Neighbours, Stochastic Gradient Descent, Gradient Boosting Trees, xgboost -> XGBClassifier</li>
-            </ul>
-        <li>[4.3 Model selection - final](#42)</li>
-              <ul>
-              <li>best model selected according to the accuracy</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425219-99bfe891-5871-4b97-8ac5-4b5da86f764e.png">
-            </ul>
-        <li>[4.4 Evalueation of the selected model](#43)</li>
-              <ul>
-              <li>computed and visually represented confusion matrix to evaluate the accuracy of a classification</li>
-                <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425271-bdfd6fd2-21fb-4e0d-b0f0-bbafc9647342.png"> <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425292-0561162f-1597-4a40-9730-027b61bb91cf.png">
-              <li>Graphs for threshold determination</li>
-                    <ul>
-                      <li>ROC & AUC</li>
-                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425350-862d8257-d051-4dc3-a38c-3b58baed7f29.png">
-                      <li>TPR & TNR - Threshold </li>
-                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425381-4171b3df-9ab3-4c9f-a361-6f7091b37cba.png">
-                      <li>Precision(PPV) & NPV - Recall</li>
-                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425404-94b473d6-7ea6-4c87-9578-ae2bd23c1697.png">
-                      <li>Accuracy - Threshold</li>
-                      <img height="150" alt="image" src="https://user-images.githubusercontent.com/58983814/129425420-7ac745f6-3877-4b65-93e1-b06ad78ffe05.png">
-                    </ul>
-            </ul>
-      </ul>
+The study consists of:<br><br>
+<a href='#1.0'>Functions to be used</a><br>
+<blockquote>
+    <a>Pandas</a><br>
+    <a>Visualization</a><br>
+    <a>Confusion matrix and metrics</a><br>
+    <a>Encoding</a><br>
+    <a>KBinsDiscretizer</a><br>
+    <a>Scaler (Standard, MinMax)</a><br>
+    <a>Missing value imputation</a><br>
+</blockquote>
+<a href='#2.0'>Import Libraries</a><br>
+<a href='#3.0'>Load Data</a><br>
+<a href='#4.0'>Exploratory Data Analysis (EDA)</a><br>
+<blockquote>
+    <a href='#4.1'>Analyze each feature</a><br>
+<img height="200" alt="image" src="https://user-images.githubusercontent.com/58983814/183268106-e1dba10f-662d-44b9-b712-120d9a954618.png"> <img height="200" alt="image" src="https://user-images.githubusercontent.com/58983814/183268114-a95859dc-5b4b-428c-9e14-83f2bd9247a3.png"> <img height="200" alt="image" src="https://user-images.githubusercontent.com/58983814/183268121-1495a834-4f44-4792-8918-c841f85d091d.png">
+
+<a href='#5.0'>Machine Learning Algorithms and Results</a><br>
+<blockquote>
+    <a href='#5.1'>Feature engineering</a><br>
+      <blockquote>
+        <a>Check categorical columns</a><br>
+        <a>Constant and quasi constant features removal</a><br>
+        <a>Remove duplicate features</a><br>
+        <a>Drop highly correlated features using Pearson Correlation</a><br>
+        <a>SelectFromModel using Logistic Regression</a><br>
+        <a>GenericUnivariateSelect and ANOVA F-value</a><br>
+        <a>SelectKBest and Mutual Information</a><br>
+        <a>RFE (Recursive feature elimination)</a><br>
+    </blockquote>
+    <a href='#5.2'>Correlation of the features</a><br>
+      <img height="200" alt="image" src="https://user-images.githubusercontent.com/58983814/183268213-e1985093-6314-4e6c-b311-53327dc248e5.png"><br>
+    <a href='#5.3'>Split Dataframe</a><br>
+    <a href='#5.3'>Overcoming Class Imbalance using SMOTE</a><br>
+      <img height="200" alt="image" src="https://user-images.githubusercontent.com/58983814/183268242-3ad11a2a-d37c-4146-9802-3ed383a35624.png"><br>
+    <a href='#5.4'>Building ML models</a><br>
+    <blockquote>
+        <a>Logistic Regression </a><br>
+        <a>Random Forest</a><br>
+        <a>Naive Bayes</a><br>
+        <a>SVM</a><br>
+        <a>Stochastic Gradient Descent</a><br>
+        <a>Gradient Boosting Trees</a><br>
+        <a>xgboost - XGBClassifier</a><br>
+        <a>Model_Selection - Final</a><br>
+      <img height="200" alt="image" src="https://user-images.githubusercontent.com/58983814/183268297-3f24d284-73d5-450b-b10b-bba5460e440d.png">
+    </blockquote>
+    <a href='#5.5'>Evaluation of the selected model</a><br>
+  <img height="200" alt="image" src="https://user-images.githubusercontent.com/58983814/183268365-7b40655b-c77b-4e34-9504-1b2a453ecfdc.png">
+</blockquote>
